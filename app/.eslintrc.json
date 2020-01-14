@@ -1,0 +1,51 @@
+{
+  "extends": ["airbnb-base", "plugin:vue/recommended"],
+  "parserOptions": {
+    "sourceType": "module",
+    "parser": "babel-eslint",
+    "allowImportExportEverywhere": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {},
+      "webpack": {}
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": false
+  },
+  "rules": {
+    "import/prefer-default-export": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "none"
+      }
+    ],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "js": "never",
+        "vue": "never"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.spec.js"],
+      "env": {
+        "node": true,
+        "jest": true
+      }
+    }
+  ]
+}

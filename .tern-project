@@ -1,0 +1,25 @@
+{
+  "ecmaVersion": 6,
+  "libs": [
+    "browser"
+  ],
+  "loadEagerly": [
+    "app/scripts/**/*.js",
+    "app/components/**/*.js"
+  ],
+  "dontLoad": [
+    "node_modules/**",
+    "app/scripts/vendor/**/*.js"
+  ],
+  "plugins": {
+    "webpack": {},
+    "modules": {},
+    "es_modules": {},
+    "node": {},
+    "complete_strings": true,
+    "doc_comment": {
+      "fullDocs": true,
+      "strong": true
+    }
+  }
+}

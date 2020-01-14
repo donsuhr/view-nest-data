@@ -1,0 +1,40 @@
+{
+  "extends": ["airbnb-base"],
+  "env": {
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "sourceType": "script"
+  },
+  "rules": {
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "none"
+      }
+    ],
+    "strict": ["error", "safe"]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [["queue-shared", "./stacks/lambda-layers/queue-shared/nodejs/node_modules/queue-shared"]]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.spec.js"],
+      "env": {
+        "node": true,
+        "jest": true
+      },
+      "parserOptions": {
+        "ecmaVersion": 9,
+        "sourceType": "module"
+      }
+    }
+  ]
+}
