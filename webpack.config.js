@@ -40,8 +40,6 @@ const plugins = [
       // more options:
       // https://github.com/kangax/html-minifier#options-quick-reference
     },
-    // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-    chunksSortMode: 'dependency',
   }),
 ];
 
@@ -106,17 +104,19 @@ module.exports = {
     compress: true,
     port: 9001,
     public: 'cmc.suhrthing.com:9001',
+    host: '0.0.0.0',
+    http2: true,
     https: {
       key: fs.readFileSync(
-        '/private/etc/letsencrypt/live/api.suhrthing.com/privkey.pem',
+        '/etc/letsencrypt/live/suhrthing.com/privkey.pem',
         'utf8',
       ),
       cert: fs.readFileSync(
-        '/private/etc/letsencrypt/live/api.suhrthing.com/cert.pem',
+        '/etc/letsencrypt/live/suhrthing.com/cert.pem',
         'utf8',
       ),
       ca: fs.readFileSync(
-        '/private/etc/letsencrypt/live/api.suhrthing.com/chain.pem',
+        '/etc/letsencrypt/live/suhrthing.com/chain.pem',
         'utf8',
       ),
     },
